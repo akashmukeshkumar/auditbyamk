@@ -159,6 +159,72 @@ header {
   transform: translateY(-2px);
 }
 
+/* Motivational section styling */
+.motivation {
+  /* Soft gradient background echoing the site’s pastel theme */
+  background: linear-gradient(135deg, #eaf4ff 0%, #f7faff 100%);
+  border-radius: 16px;
+  padding: 40px 30px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.motivation p {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #254d80;
+  line-height: 1.4;
+}
+
+    /* Feature list styling inside cards */
+    .features {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 24px;
+      /* Align feature text to the left within the card so descriptions appear neat */
+      text-align: left;
+    }
+
+    .features li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .features li::before {
+      content: "\2022"; /* Unicode bullet point */
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* Set feature text and bullet colours for coloured cards */
+    .card-green .features li,
+    .card-purple .features li {
+      color: #ffffff;
+    }
+
+    .card-green .features li::before,
+    .card-purple .features li::before {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Feature colours for default (light) cards if needed */
+    .card:not(.card-green):not(.card-purple) .features li {
+      color: #444;
+    }
+
+    .card:not(.card-green):not(.card-purple) .features li::before {
+      color: #6d7c99;
+    }
+
 /* Footer styles */
 footer {
   text-align: center;
