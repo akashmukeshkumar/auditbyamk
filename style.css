@@ -298,7 +298,12 @@
   /* Stack cards vertically on small screens */
   .cards {
     flex-direction: column;
+    /* Reduce padding and margins on small screens so the section fits neatly */
     padding: 20px 10px;
+    margin: 20px 10px;
+    border-radius: 12px;
+    /* Increase backdrop transparency slightly for better readability on small screens */
+    background: rgba(255, 255, 255, 0.9);
   }
   .card {
     max-width: 100%;
@@ -313,10 +318,29 @@
   }
   .motivation {
     padding: 30px 20px;
-    margin: 20px auto;
+    margin: 20px 10px;
   }
   .motivation p {
     font-size: 1.3rem;
+  }
+  /* Adjust reviews section on small screens */
+  .reviews {
+    padding: 30px 15px;
+    margin: 20px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .reviews h2 {
+    font-size: 1.6rem;
+  }
+  .review-grid {
+    gap: 15px;
+  }
+  .review-grid img {
+    /* Make review images responsive: take full width of the container with a maximum size */
+    max-width: 100%;
+    width: 100%;
+    height: auto;
   }
 }
 
