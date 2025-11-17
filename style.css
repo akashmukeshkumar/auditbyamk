@@ -310,12 +310,6 @@
     margin: 0 auto 20px;
     padding: 25px;
   }
-  .header-content h1 {
-    font-size: 2rem;
-  }
-  .header-content p {
-    font-size: 1rem;
-  }
   .motivation {
     padding: 30px 20px;
     margin: 20px 10px;
@@ -341,6 +335,30 @@
     max-width: 100%;
     width: 100%;
     height: auto;
+  }
+
+  /* Adjust header layout on small screens so the title and subheading fit neatly */
+  header {
+    /* Increase vertical padding and allow more room for header text */
+    padding: 50px 15px 35px;
+  }
+  .header-content {
+    /* Let header text flow naturally instead of being absolutely positioned */
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  .header-content h1 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+  .header-content p {
+    font-size: 0.9rem;
+    margin-top: 6px;
   }
 }
 
