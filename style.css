@@ -5,13 +5,8 @@
       /* Use a modern system font stack for a professional feel */
       font-family: "Segoe UI", Tahoma, Helvetica, Arial, sans-serif;
       /* Light pastel background reminiscent of modern study portals */
-      /* Apply the professional image as a fixed background for the entire page */
       background-color: #f7faff;
-      background-image: url('background-amk.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      /* Remove the global background image: the illustration will instead appear in the header and under the sections */
       color: #333;
       display: flex;
       flex-direction: column;
@@ -83,10 +78,18 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      padding: 40px 20px;
+      padding: 60px 20px;
       flex-grow: 1;
-      max-width: 900px;
-      margin: 0 auto;
+      /* Remove the max-width so the cards section spans the full width and shows off the background */
+      margin: 0;
+      /* Use the professional illustration as the background beneath the cards */
+      background-image: url('background-amk.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      /* Ensure inner cards sit above the background */
+      position: relative;
     }
 
     .card {
@@ -107,40 +110,60 @@
     }
 
     /* Colourful study-themed cards inspired by Studydrive */
-    .card-green {
-      /* Cool blue gradient to match the header image */
-      background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
-      color: #ffffff;
-    }
-
+    /* Style the conceptual and Q/A cards with tinted gradient backgrounds and white text */
+    .card-green,
     .card-purple {
-      /* Deep blue-violet gradient for variety within the blue theme */
-      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      /* Use semi-transparent gradients based on their accent colours so the image shows through */
+      background: linear-gradient(135deg, rgba(33, 147, 176, 0.75), rgba(109, 213, 237, 0.75));
+      border-radius: 16px;
+      border-top-width: 6px;
+      border-top-style: solid;
       color: #ffffff;
     }
-
+    .card-green {
+      /* Maintain the original blue-green accent for the top border */
+      border-top-color: #2193b0;
+    }
+    .card-purple {
+      /* Override the gradient for the purple card with its own tones */
+      background: linear-gradient(135deg, rgba(106, 17, 203, 0.75), rgba(37, 117, 252, 0.75));
+      border-top-color: #2575fc;
+    }
     .card-green h2,
     .card-purple h2 {
+      margin-top: 0;
+      font-weight: 700;
       color: #ffffff;
     }
-
     .card-green p,
     .card-purple p {
-      color: #f8f8f8;
+      /* Light text colour for readability on tinted backgrounds */
+      color: #eef5fd;
     }
-
-    /* White buttons inside colourful cards */
-    .card-green .btn,
+    .card-green .features li,
+    .card-purple .features li {
+      color: #eef5fd;
+    }
+    .card-green .features li::before {
+      /* Soft accent colour bullets for conceptual card */
+      color: #bde1f3;
+    }
+    .card-purple .features li::before {
+      /* Soft accent colour bullets for Q/A card */
+      color: #c3d6fa;
+    }
+    /* Buttons inside coloured cards use a light background with accent-coloured text */
+    .card-green .btn {
+      background-color: #ffffff;
+      color: #2193b0;
+    }
     .card-purple .btn {
       background-color: #ffffff;
-      color: #254d80;
-      border: none;
+      color: #2575fc;
     }
-
     .card-green .btn:hover,
     .card-purple .btn:hover {
-      background-color: #e6e6e6;
-      color: #254d80;
+      background-color: #f1f5fc;
     }
 
     .card h2 {
@@ -220,25 +243,7 @@
           line-height: 1;
         }
 
-        /* Set feature text and bullet colours for coloured cards */
-        .card-green .features li,
-        .card-purple .features li {
-          color: #ffffff;
-        }
-
-        .card-green .features li::before,
-        .card-purple .features li::before {
-          color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Feature colours for default (light) cards if needed */
-        .card:not(.card-green):not(.card-purple) .features li {
-          color: #444;
-        }
-
-        .card:not(.card-green):not(.card-purple) .features li::before {
-          color: #6d7c99;
-        }
+        /* Remove old coloured feature text styling definitions since cards now have customised colours */
 
     /* Footer styles */
     footer {
